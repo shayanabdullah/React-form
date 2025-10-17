@@ -23,10 +23,9 @@ const App = () => {
   }
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (validition()) {
-      e.preventDefault();
       console.log(formData);
-      
     }
 
   }
@@ -37,21 +36,26 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <h2>Registration Form</h2>
-          <div className="mb-3">
-            <label htmlFor="">Name :</label>
-            <input type="text" name='name' onChange={handleChange} />
-            {error.name && <strong style={{color: 'red'}}>{error.name}</strong>}
+          <div className="mb-3 relative">
+            <label htmlFor="name">Name :</label>
+            <input type="text" id='name' name='name' onChange={handleChange} />
+            {error.name &&
+             <div className="error-box w-80 h-10 bg-[#ff6347] absolute top-8 right-[-55%] rounded-2xl rounded-bl-[0px]">
+              <p className='text-2xl text-white font-semibold text-center leading-[40 px]'>{error.name} !</p>
+            </div>
+
+            }
           </div>
           <div className="mb-3">
-            <label htmlFor="">Email :</label>
-            <input type="email" name='email' onChange={handleChange} required />
+            <label htmlFor="email">Email :</label>
+            <input type="email" name='email'id='email' onChange={handleChange} />
 
           </div>
           <div className="mb-3">
-            <label htmlFor="">Password :</label>
-            <input type="password" name='password' onChange={handleChange} required />
+            <label htmlFor="password">Password :</label>
+            <input type="password" name='password' id='password' onChange={handleChange} />
 
           </div>
           <button type='submit' >Register</button>

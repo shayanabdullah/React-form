@@ -24,6 +24,7 @@ form h2{
   text-align: center;
   font-size: 35px;
   padding-bottom: 20px;
+  font-weight: 600;
 }
 
 label{
@@ -32,16 +33,17 @@ label{
   padding-bottom: 5px;
 }
 
-form input{
-  width: 95%;
+form .mb-3 input{
+  width: 96% ;
   padding: 10px 10px;
-  border: 2px #dddd;
-  outline: none; 
+  border: 2px solid #dddd;
+  background: white;
+  outline: 1px black; 
 }
 
 form button{
   padding: 10px 10px;
-  background: tomato;
+  background: #ff6347;
   color: white;
   outline: none;
   border: none;
